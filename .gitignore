@@ -1,0 +1,7 @@
+node_modules
+dist
+.env
+.env.*
+*.tsbuildinfo
+public/media
+src/data/assets.generated.ts

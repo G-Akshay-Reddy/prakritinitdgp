@@ -1,0 +1,15 @@
+{
+  "name": "PRAKRITI - The Techno Environmental Club of NIT Durgapur",
+  "short_name": "PRAKRITI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#16A34A",
+  "icons": [
+    {
+      "src": "/media/Shrishti/16.jpg",
+      "sizes": "any",
+      "type": "image/jpeg"
+    }
+  ]
+}
