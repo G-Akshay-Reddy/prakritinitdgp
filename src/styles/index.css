@@ -147,8 +147,131 @@ img {
   color: var(--muted);
 }
 
-.hero-mask {
-  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 82% 48%, rgba(80, 214, 175, 0.15), transparent 25rem),
+    radial-gradient(circle at 75% 62%, rgba(56, 189, 248, 0.12), transparent 21rem),
+    linear-gradient(90deg, rgba(5, 5, 5, 0.2) 0%, transparent 55%);
+}
+
+.hero-spotlight {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(circle 24rem at var(--spotlight-x, 76%) var(--spotlight-y, 46%), rgba(175, 255, 122, 0.1), transparent 68%);
+  transition: background-position 140ms ease-out;
+}
+
+.hero-aurora {
+  position: absolute;
+  width: 48rem;
+  height: 9rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(116, 255, 171, 0.11), rgba(87, 211, 255, 0.13), transparent);
+  filter: blur(26px);
+  mix-blend-mode: screen;
+  transform-origin: right center;
+  animation: aurora-drift 12s ease-in-out infinite alternate;
+}
+
+.hero-aurora--one {
+  right: -12rem;
+  top: 21%;
+  transform: rotate(-28deg);
+}
+
+.hero-aurora--two {
+  right: -17rem;
+  top: 48%;
+  opacity: 0.72;
+  transform: rotate(20deg) scaleX(0.82);
+  animation-delay: -4s;
+}
+
+.hero-aurora--three {
+  right: -8rem;
+  bottom: 3%;
+  opacity: 0.5;
+  transform: rotate(-5deg) scaleX(0.7);
+  animation-delay: -8s;
+}
+
+@keyframes aurora-drift {
+  from {
+    translate: 0 0;
+    opacity: 0.42;
+  }
+
+  to {
+    translate: -3.5rem 1.5rem;
+    opacity: 0.78;
+  }
+}
+
+.aceternity-globe {
+  isolation: isolate;
+  cursor: grab;
+  filter: drop-shadow(0 2rem 3rem rgba(0, 0, 0, 0.48));
+}
+
+.aceternity-globe:active {
+  cursor: grabbing;
+}
+
+.aceternity-globe__halo {
+  position: absolute;
+  inset: 12% 7%;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(91, 220, 179, 0.19), rgba(56, 189, 248, 0.06) 43%, transparent 70%);
+  filter: blur(18px);
+  transform: scale(1.14, 0.96);
+}
+
+.aceternity-globe__label {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, 0.5rem);
+  border: 1px solid rgba(183, 243, 74, 0.35);
+  border-radius: 999px;
+  background: rgba(3, 16, 13, 0.72);
+  padding: 0.35rem 0.65rem;
+  color: #d9ff73;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.aceternity-globe__label.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (min-width: 1024px) {
+  .hero-globe-wrap {
+    margin-right: -9%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-section::before {
+    background: radial-gradient(circle at 50% 80%, rgba(80, 214, 175, 0.13), transparent 22rem);
+  }
+
+  .hero-aurora {
+    width: 32rem;
+    opacity: 0.5;
+  }
 }
 
 .image-gradient::after {

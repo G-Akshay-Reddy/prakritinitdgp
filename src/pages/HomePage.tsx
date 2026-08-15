@@ -2,8 +2,9 @@ import { gsap } from "gsap";
 import { ArrowDown, BookOpen, Compass, Leaf, Sparkles } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { EarthScene } from "../components/three/EarthScene";
+import { AceternityGlobe } from "../components/three/AceternityGlobe";
 import { Counter } from "../components/ui/Counter";
+import { HeroSpotlight } from "../components/ui/HeroSpotlight";
 import { OptimizedImage } from "../components/ui/OptimizedImage";
 import { PageTransition } from "../components/ui/PageTransition";
 import { PrimaryLink } from "../components/ui/PrimaryLink";
@@ -47,9 +48,9 @@ export default function HomePage() {
         image={site.logo ?? latestIssue?.coverImage}
       />
 
-      <section ref={heroRef} className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
-        <EarthScene />
-        <div className="container-wide relative z-10 grid min-h-[calc(100vh-4rem)] items-center py-20 lg:grid-cols-[0.9fr_1.1fr]">
+      <section ref={heroRef} className="hero-section relative min-h-[calc(100vh-4rem)] overflow-hidden">
+        <HeroSpotlight targetRef={heroRef} />
+        <div className="container-wide relative z-10 grid min-h-[calc(100vh-4rem)] items-center py-20 lg:grid-cols-[0.94fr_1.06fr]">
           <div className="max-w-3xl">
             <p data-hero className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/[0.15] bg-white/[0.08] px-4 py-2 text-sm font-bold text-prakriti-accent backdrop-blur">
               <Leaf aria-hidden="true" className="h-4 w-4" />
@@ -74,6 +75,9 @@ export default function HomePage() {
                 Read SHRISHTI
               </PrimaryLink>
             </div>
+          </div>
+          <div className="hero-globe-wrap relative mt-10 h-[min(74vw,33rem)] min-h-[22rem] w-full lg:mt-0 lg:h-[min(51vw,42rem)] lg:min-h-[34rem] lg:translate-x-[7%]">
+            <AceternityGlobe />
           </div>
         </div>
         <a
