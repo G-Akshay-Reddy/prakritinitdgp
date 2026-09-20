@@ -21,7 +21,7 @@ function LogoMark() {
       {site.logo ? (
         <img src={site.logo} alt="" className="h-full w-full object-cover" width={40} height={40} />
       ) : (
-        <Leaf aria-hidden="true" className="h-5 w-5 text-prakriti-accent" />
+        <Leaf aria-hidden="true" className="h-5 w-5 text-prakriti-secondary" />
       )}
     </span>
   );
@@ -61,7 +61,7 @@ export function Header() {
               className={({ isActive }) =>
                 [
                   "rounded-full px-3 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline-prakriti-accent",
-                  isActive ? "bg-white text-black hover:bg-white hover:text-black" : ""
+                  isActive ? "bg-prakriti-primary text-white hover:bg-prakriti-secondary hover:text-black" : ""
                 ].join(" ")
               }
             >
@@ -72,7 +72,7 @@ export function Header() {
 
         <NavLink
           to="/shrishti"
-          className="hidden rounded-full border border-prakriti-accent/40 bg-prakriti-accent px-4 py-2 text-sm font-black text-black transition hover:bg-white focus-visible:outline-prakriti-accent md:inline-flex"
+          className="hidden rounded-full border border-prakriti-primary/60 bg-prakriti-primary px-4 py-2 text-sm font-black text-white transition hover:bg-prakriti-secondary hover:text-black focus-visible:outline-prakriti-accent md:inline-flex"
         >
           Read SHRISHTI
         </NavLink>
@@ -80,7 +80,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-prakriti-accent bg-prakriti-accent text-black transition hover:bg-white lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-prakriti-primary bg-prakriti-primary text-white transition hover:bg-prakriti-secondary hover:text-black lg:hidden"
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={open}
         >
